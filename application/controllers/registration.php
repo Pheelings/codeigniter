@@ -19,6 +19,7 @@ class Registration extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[users.Username]|alpha_dash');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[60]');
 		$this->form_validation->set_rules('password2', 'Confirm Password', 'required|min_length[8]|max_length[60]|matches[password]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 
 		// Get page data
 		$pageData = $this->page->getPageData('registration');
@@ -32,6 +33,12 @@ class Registration extends CI_Controller {
 			// Show registration form again
 			$this->load->view('registration');
 		} else {
+			// Load the model
+			$this->load->model('registration_model');
+
+			// Do registration
+			$this->Registration_Model->registerAccount();
+
 			//$this->load->view('formsuccess');
 			echo 'success';
 		}

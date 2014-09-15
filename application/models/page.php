@@ -8,6 +8,9 @@ class Page extends CI_Model {
   {
     // REQUIRED! withut this we destroy the parent model class
     parent::__construct();
+
+    // Connect to DB
+    $this->load->database();
     
   }
 
@@ -15,9 +18,6 @@ class Page extends CI_Model {
 
   // Function to get page data
   public function getPageData( $pageName) {
-
-  	// Connect to DB
-    $this->load->database();
 
   	// Select from table where Page_Name = $pageName
     // get where:
