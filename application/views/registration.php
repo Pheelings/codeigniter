@@ -4,9 +4,11 @@
 
 <?php
 	// Form settings
-	$usernameSettings 			= ['name'=>'username', 'id'=>'username'];
+	$usernameSettings 			= ['name'=>'username', 'id'=>'username', 'value'=>set_value('username')];
 	$passwordSettings 			= ['name'=>'password', 'id'=>'password'];
 	$confirmPasswordSettings 	= ['name'=>'password2', 'id'=>'password2'];
+	$emailSettings 				= ['name'=>'email', 'id'=>'email', 'value'=>set_value('email')];
+
 	// The form
 	echo form_open('registration');
 ?>
@@ -21,6 +23,10 @@
 <div>
 	<?php echo form_label('Confirm Password: ', 'password2'); ?>
 	<?php echo form_password($confirmPasswordSettings); ?>
+</div>
+<div>
+	<?php echo form_label('Email: ', 'email'); ?>
+	<?php echo form_input($emailSettings); ?>
 </div>
 <div>
 	<?php echo form_submit('register', 'Register Account'); ?>

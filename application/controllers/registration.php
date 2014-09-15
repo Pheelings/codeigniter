@@ -19,6 +19,7 @@ class Registration extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[40]|is_unique[users.Username]|alpha_dash');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[60]');
 		$this->form_validation->set_rules('password2', 'Confirm Password', 'required|min_length[8]|max_length[60]|matches[password]');
+		$this->form_validation->set_rules('email', 'E-Mail', 'trim|required|valid_email');
 
 		// Get page data
 		$pageData = $this->page->getPageData('registration');
