@@ -5,18 +5,17 @@ class Home extends CI_Controller {
 	// Index method runs automatically if no other method is called
 	public function index() {
 
-		// Get page data
+		// Get page data from the page model
 		$pageData = $this->page->getPageData('home');
 
-		// Header
+		// Header HTML. Send page data for Title, meta etc
 		$this->load->view('templates/header', $pageData);
 
 		// Home content
 		$this->load->view('home');
 
-		// Footer
+		// Footer HTML
 		$this->load->view('templates/footer');
-
 
 	}
 

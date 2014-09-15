@@ -17,7 +17,6 @@ class About extends CI_Controller {
 		// Footer
 		$this->load->view('templates/footer');
 
-
 	}
 
 }
