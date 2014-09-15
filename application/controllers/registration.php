@@ -36,6 +36,12 @@ class Registration extends CI_Controller {
 		}
 		else
 		{
+			// Load the model
+			$this->load->model('Registration_Model');
+
+			// Do registration
+			$this->Registration_Model->registerAccount();
+
 			//$this->load->view('formsuccess');
 			echo 'success';
 		}
