@@ -4,7 +4,7 @@
 
 <?php
 
-	echo form_open('registration/doRegistration');
+	echo form_open('registration');
 
 	// Prepare settings for username input
 	$usernameSettings = ['name'=>'username', 'id'=>'username'];
