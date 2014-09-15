@@ -16,7 +16,9 @@ class Registration extends CI_Controller {
 		// arg1 = name of form
 		// arg2 = Part of error message
 		// argument 3 = list of validation steps separated by pipes. First to last
-		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[users.Username]');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[users.Username]|alpha_dash');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[60]');
+		$this->form_validation->set_rules('password2', 'Confirm Password', 'required|min_length[8]|max_length[60]|matches[password]');
 
 		// Get page data
 		$pageData = $this->page->getPageData('registration');
