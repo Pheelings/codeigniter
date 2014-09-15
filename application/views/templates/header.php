@@ -8,7 +8,11 @@
 <body>
 
 <nav>
-	<ul>
+	<ul><?php
+		// anchor function is from url helper
+		// argument 1 is the controller to load
+		// argument 2 is the cick text
+		?>
 		<li><?php echo anchor('home', 'Home'); ?></li>
 		<li><?php echo anchor('about', 'About'); ?></li>
 		<li><?php echo anchor('registration', 'Registration'); ?></li>
