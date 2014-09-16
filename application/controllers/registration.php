@@ -2,6 +2,7 @@
 
 class Registration extends CI_Controller {
 
+<<<<<<< HEAD
 	public function __construct() {
 
 		// call the parent constructor
@@ -14,12 +15,19 @@ class Registration extends CI_Controller {
 	public function index() {
 
 		// Form helper
+=======
+	// Index method runs automatically if no other method is called2
+	public function index() {
+		
+		// Load Form
+>>>>>>> e16bc492da229cc2b0aa7b65d6c4738877fadd0c
 		$this->load->helper('form');
 
 		// Library to help with validation of form
 		$this->load->library('form_validation');
 
 		// Rules for validation
+<<<<<<< HEAD
 		// Set rule for usename
 		// arg1 = name of form element
 		// arg2 = Part of Error Message
@@ -46,6 +54,31 @@ class Registration extends CI_Controller {
 		{
 			// Load the model
 			$this->load->model('Registration_Model');
+=======
+		// Set rule for username
+		// arg1 = name of form
+		// arg2 = Part of error message
+		// argument 3 = list of validation steps separated by pipes. First to last
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[users.Username]|alpha_dash');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[60]');
+		$this->form_validation->set_rules('password2', 'Confirm Password', 'required|min_length[8]|max_length[60]|matches[password]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+
+		// Get page data
+		$pageData = $this->page->getPageData('registration');
+		
+		// Header
+		$this->load->view('templates/header', $pageData);
+
+			// Run the validation process
+		// if FALSE is returned then validation failed
+		if( $this->form_validation->run() == FALSE ) {
+			// Show registration form again
+			$this->load->view('registration');
+		} else {
+			// Load the model
+			$this->load->model('registration_model');
+>>>>>>> e16bc492da229cc2b0aa7b65d6c4738877fadd0c
 
 			// Do registration
 			$this->Registration_Model->registerAccount();
@@ -57,6 +90,7 @@ class Registration extends CI_Controller {
 		// Footer
 		$this->load->view('templates/footer');
 
+<<<<<<< HEAD
 	}
 
 	public function usernameCheck( $value ) {
@@ -79,4 +113,9 @@ class Registration extends CI_Controller {
 
 	}
 
+=======
+
+	}
+	
+>>>>>>> e16bc492da229cc2b0aa7b65d6c4738877fadd0c
 }

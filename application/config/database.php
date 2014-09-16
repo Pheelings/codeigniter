@@ -67,7 +67,11 @@ $db['default']['stricton'] = FALSE;
 $db['live']['hostname'] = 'localhost';
 $db['live']['username'] = 'user@site.com';
 $db['live']['password'] = 'reallyHardPassword';
+<<<<<<< HEAD
 $db['live']['database'] = 'nameOfDBOnServer';
+=======
+$db['live']['database'] = 'codeigniter';
+>>>>>>> e16bc492da229cc2b0aa7b65d6c4738877fadd0c
 $db['live']['dbdriver'] = 'mysql';
 $db['live']['dbprefix'] = '';
 $db['live']['pconnect'] = TRUE;
@@ -80,5 +84,9 @@ $db['live']['swap_pre'] = '';
 $db['live']['autoinit'] = TRUE;
 $db['live']['stricton'] = FALSE;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e16bc492da229cc2b0aa7b65d6c4738877fadd0c
 /* End of file database.php */
 /* Location: ./application/config/database.php */
