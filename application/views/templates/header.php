@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title><?php echo $Page_Title; ?></title>
 	<meta name="description" content="<?php echo $Page_Meta; ?>">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body>
 
@@ -18,3 +19,4 @@
 		<li><?php echo anchor('registration', 'Registration'); ?></li>
 	</ul>
 </nav>
+<div id="wrapper">

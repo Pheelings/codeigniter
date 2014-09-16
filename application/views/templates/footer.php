@@ -1,3 +1,4 @@
+</div> <!--Wrapper-->
 <footer>
 
 <p>&copy; <?php echo date('Y'); ?> <strong>9/11 Never Forget</strong></p>
